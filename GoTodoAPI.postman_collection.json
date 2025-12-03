@@ -1,0 +1,52 @@
+{
+  "info": {
+    "name": "Go Todo API",
+    "_postman_id": "a1b2c3d4-e5f6-7890-1234-abcdef987654",
+    "description": "Collection untuk testing API Go Todo dengan Gin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Todos",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/todos"
+      }
+    },
+    {
+      "name": "Create Todo",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Belajar Golang\",\n  \"completed\": false\n}"
+        },
+        "url": "{{base_url}}/todos"
+      }
+    },
+    {
+      "name": "Update Todo",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Belajar Golang Level Lanjut\",\n  \"completed\": true\n}"
+        },
+        "url": "{{base_url}}/todos/{{todoId}}"
+      }
+    },
+    {
+      "name": "Delete Todo",
+      "request": {
+        "method": "DELETE",
+        "url": "{{base_url}}/todos/{{todoId}}"
+      }
+    }
+  ]
+}
